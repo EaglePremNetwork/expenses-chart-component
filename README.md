@@ -16,9 +16,9 @@ A responsive expense chart component built with React, TypeScript, and Tailwind 
 
 <div align="center">
 
-![expenses-chart-component-1](https://github.com/user-attachments/assets/da1f0249-51d7-4272-9b57-59fe5dfcfcb4)
-![expenses-chart-component-2](https://github.com/user-attachments/assets/6e9670ed-5754-4488-961c-eecb15b41537)
+![expenses-chart-component-1](https://github.com/user-attachments/assets/07e976e4-bda7-49e8-994c-493953d2d3b2)
+![expenses-chart-component-2](https://github.com/user-attachments/assets/a10644e1-45db-4d3d-876f-61ef3a50f72a)
 
-![expenses-chart-component-3](https://github.com/user-attachments/assets/7d8cc494-469c-4af0-aec3-fa35a63e2f26)
+![expenses-chart-component-3](https://github.com/user-attachments/assets/a854b3a0-736a-47bb-b77c-4a6d9897f222)
 
 </div>
