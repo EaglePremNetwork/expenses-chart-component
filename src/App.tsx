@@ -1,3 +1,4 @@
+import type React from "react";
 import logoImg from "./assets/logo.svg";
 import expenseData from "./data.json";
 
@@ -5,9 +6,9 @@ const maxAmount = Math.max(...expenseData.map((day) => day.amount));
 
 function App() {
   return (
-    <main className="min-h-dvh flex flex-col">
-      <article className="flex flex-col gap-4 lg:px-120 lg:pt-10">
-        <section className="flex mt-15 mx-4 p-5 items-center justify-between rounded-xl bg-red-500">
+    <main className="min-h-dvh flex flex-col justify-center">
+      <article className="flex flex-col gap-4 lg:px-120">
+        <section className="flex mx-4 p-5 items-center justify-between rounded-xl bg-red-500">
           <div className="flex flex-col">
             <span className="text-[16px] text-red-100 lg:text-lg">
               My balance
@@ -26,7 +27,7 @@ function App() {
           <h1 className="pb-12 font-bold text-2xl text-brown-950 lg:pb-4 lg:text-3xl">
             Spending - Last 7 days
           </h1>
-          <ul className="grid grid-cols-7 items-end justify-center gap-2">
+          <ul className="grid grid-cols-7 items-end justify-center">
             {expenseData.map((day) => {
               return (
                 <li key={day.day} className="flex flex-col group items-center">
@@ -34,14 +35,16 @@ function App() {
                     {`$${day.amount}`}
                   </span>
                   <div
-                    style={{
-                      height: `${(day.amount / maxAmount) * 160}px`,
-                      backgroundColor:
-                        day.day.trim() === "wed"
-                          ? "var(--color-blue-300)"
-                          : "var(--color-red-500)",
-                    }}
-                    className="w-8.5 rounded-sm cursor-pointer hover:opacity-80 lg:w-10"
+                    style={
+                      {
+                        "--bar-height": `${(day.amount / maxAmount) * 160}px`,
+                        "--bar-color":
+                          day.day.trim() === "wed"
+                            ? "var(--color-blue-300)"
+                            : "var(--color-red-500)",
+                      } as React.CSSProperties
+                    }
+                    className="w-8.5 h-(--bar-height) bg-(--bar-color) rounded-sm cursor-pointer hover:opacity-80 lg:w-10 lg:h-[calc(var(--bar-height)*0.75)]"
                   ></div>
                   <span className="pt-2 pb-6 text-sm text-brown-400">
                     {day.day}
